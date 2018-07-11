@@ -1158,7 +1158,7 @@ export class LowLevelWrapperForTypeSystem extends defs.SourceProvider implements
         if(isUses){
             let parent = this._node.parent();
             let grandParent = parent.parent();
-            if(grandParent!=null){
+            if(grandParent!=null && grandParent.unit() != null){
                 if(this._node.unit().absolutePath()==grandParent.unit().absolutePath()){
                     isUses = false;
                 }
